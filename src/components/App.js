@@ -12,8 +12,10 @@ class App extends Component {
 
 	createTodoList = () => {
 		const name = this.refs.newList.getValue()
-		this.props.createTodoList(name)
-		this.refs.newList.value = ""
+		if (name.trim() !== "") {
+			this.props.createTodoList(name)
+			this.refs.newList.getInputNode().value = ""
+		}
 	}
 
 	componentDidMount = () => {

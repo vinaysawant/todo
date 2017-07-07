@@ -28,7 +28,6 @@ router.post('/v1.0.0/list/:id/todo/:todo_id/', (req, res) => {
 		const listId = req.params.id
 		const todoId = req.params.todo_id
 		const todoStatus = req.session.todo_lists[listId]['todos'][todoId]['status']
-		console.log(todoStatus)
 		req.session.todo_lists[listId]['todos'][todoId]['status'] = !todoStatus
 		res.json(req.session.todo_lists)
 	} else {

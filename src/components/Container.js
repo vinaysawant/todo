@@ -34,18 +34,21 @@ class Container extends Component {
 
 	addTodo = (listIndex) => {
 		const newTodo = this.refs.newTodo.getValue()
-		this.props.addTodo(listIndex, newTodo)
-		this.refs.newTodo.value = ""
+		if (newTodo.trim() !== "") {
+			this.props.addTodo(listIndex, newTodo)
+			this.refs.newTodo.getInputNode().value = ""
+		}
 	}
 
 	update = (listIndex, todoIndex) => {
 		this.props.update(listIndex, todoIndex)
+		this.setActiveFilter()
 	}
 
 	render() {
 		const currentThis = this
 		return (
-			<Card style={{margin:10}}>
+			<Card style={{margin: 10, maxWidth: '300px', float: 'left'}}>
 				<CardTitle title={this.props.todoList.name}></CardTitle>
 				<CardText>
 					<TextField
