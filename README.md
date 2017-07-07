@@ -3,10 +3,10 @@ A todo app using React, node and redis
 
 ## Requirements
 
-### Node
-### npm
-### redis-server
-
+Node
+npm
+redis-server
 
 ## Run
+npm install
 npm run build
