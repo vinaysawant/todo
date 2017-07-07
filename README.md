@@ -10,3 +10,6 @@ A todo app using React, node and redis
 ## Run
 - npm install
 - npm run build
+
+### Demo
+Open **http://localhost:7000/**
