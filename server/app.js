@@ -17,7 +17,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 app.use(session({
 	store: new RedisStore({
-		url: 'redis://h:pa49a449f37498f06a82e6458d792694e6768ada5bb1122f83842d13334d7462c@ec2-34-226-55-20.compute-1.amazonaws.com:7529',
+		host: 'ec2-34-226-55-20.compute-1.amazonaws.com',
+		pass:'pa49a449f37498f06a82e6458d792694e6768ada5bb1122f83842d13334d7462c',
+		port:7529,
 		ttl: 900000,
 		logErrors: true}),
 	secret: 'z{-B";-SQUNF(f2*;e_v2zR4]vg-e:j.',
